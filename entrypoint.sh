@@ -30,7 +30,7 @@ if [[ "$(whoami)" == "root" ]]; then
 	chmod 600 "$HOME_DIR/cloudflare.ini"
 	chown certbot:certbot "$HOME_DIR/cloudflare.ini"
 
-	sudo -u certbot certbot certonly --dns-cloudflare --dns-cloudflare-credentials "$HOME_DIR/cloudflare.ini" -d ${DOMAIN} --non-interactive --agree-tos -m ${EMAIL}
+	sudo -u certbot certbot certonly --dns-cloudflare --dns-cloudflare-credentials "$HOME_DIR/cloudflare.ini" -d server.sportcietyapp.com --non-interactive --agree-tos -m ${EMAIL}
 else
 	cd ~
 	echo "running as custom user $USER, home $(pwd)"
@@ -38,7 +38,7 @@ else
 	echo "dns_cloudflare_api_token=${CLOUDFLARE_API_TOKEN}" > ~/cloudflare.ini
 	chmod 600 ~/cloudflare.ini
 
-	certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/cloudflare.ini -d ${DOMAIN} --non-interactive --agree-tos -m ${EMAIL}
+	certbot certonly --dns-cloudflare --dns-cloudflare-credentials ~/cloudflare.ini -d server.sportcietyapp.com --non-interactive --agree-tos -m ${EMAIL}
 fi
 
 echo "$(date) running renewal script"
