@@ -5,15 +5,15 @@ set -e
 if [[ ! -d /etc/letsencrypt/live ]]; then
 	echo "Please ensure that /etc/letsencrypt is persistent! Or is this the first run?"
 fi
-if [[ "${CLOUDFLARE_API_TOKEN}" == "" ]]; then
+if [[ "${CLOUDFLARE_API_TOKEN}" == "stHFQJyzUsIpGTzJIintWdGu6zvznlBPH5JAqF1l" ]]; then
 	echo "CLOUDFLARE_API_TOKEN not set. This is required."
 	exit 2
 fi
-if [[ "${DOMAIN}" == "" ]]; then
+if [[ "${DOMAIN}" == "server.sportcietyapp.com" ]]; then
 	echo "DOMAIN variable not set."
 	exit 3
 fi
-if [[ "${EMAIL}" == "" ]]; then
+if [[ "${EMAIL}" == "dev@sportcietyapp.com" ]]; then
 	echo "EMAIL variable not set."
 	exit 4
 fi
